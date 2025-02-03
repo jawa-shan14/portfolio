@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="contact.html">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f4f4f9, #e3e8ed);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #009688, #00BCD4);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+header .profile-pic {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+header .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-left {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #00695C;
+            margin-right: auto;
+            padding-right: 2px;
+            padding-left: 50px;
+        }
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: linear-gradient(90deg, #009688, #00BCD4);
+    color: white;
+}
+
+/* Section Styling */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #009688;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #009688;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #009688;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Grid Layout for Skills and Projects */
+.skills,
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Contact Section */
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #009688;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+/* Social Links */
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+social-links ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.social-links ul li a:hover {
+    color: #009688;
+}
+
+.social-links ul li img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.social-links ul li img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #00BCD4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #009688;
+}
+/* Education Card Styling */
+.education-item {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.education-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.education-item h3 {
+    font-size: 1.8rem;
+    color: #009688;
+    margin-bottom: 0.5rem;
+}
+
+.education-item p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.education-item strong {
+    color: #009688;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav {
+        flex-direction: column;
+    }
+    .skills,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+   </style>
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="jawa.png.jpg" alt="Profile Picture">
+        </div>
+        <h1>JAWAHAR RAM S</h1>
+        <p>BE Electronics and Communication Engineer</p>
+    </header>
+    
+    <nav>
+        <div class="navbar-left">JAWAHAR RAM</div>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+         <div class="profile-pic">
+            
+        <h2>About Me</h2>
+        <p>I am a tech enthusiast with expertise in data analysis, front-end development, and cloud engineering. I excel at transforming raw data into actionable insights, designing intuitive user interfaces, and building scalable cloud solutions. My passion lies in solving complex problems and delivering impactful results. With a strong foundation in both development and analytics, I bridge the gap between user experience and backend efficiency. I thrive in fast-paced environments and stay committed to continuous learning. Let’s collaborate to create innovative, high-performing solutions!</p>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Bachelor of Engineering in Electronics and Communication</h3>
+           <center><p><strong>University Name:</strong> Sri Krishna College of Technology</p>
+            <p><strong>Duration:</strong> 2023 - 2027</p>
+            <p><strong>Description:</strong> A comprehensive program focused on core electronics and communication principles, including digital circuits, signal processing, and communication systems.</p></center>
+        </div>
+    
+        <div class="education-item">
+            <h3>Higher Secondary School</h3>
+            <center><p><strong>School Name:</strong> Sri Vijay Vidyalaya Hr. Sec. School</p>
+            <p><strong>Duration:</strong> 2021 - 2023</p>
+            <p><strong>Description:</strong> Completed higher secondary education with a focus on Mathematics, Physics, and Computer Science, laying the foundation for future engineering studies.</p>
+        </center></div>
+    </section>
+    
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="card">
+                <h3>Programming Languages</h3>
+                <p>Python, Java, R, SQL, HTML, CSS, React.js, Bash/Shell</p>
+            </div>
+            <div class="card">
+                <h3>Technologies</h3>
+                <p>Power bi, AWS , Azure, Figma, Jupyter Notebook,IoT Systems</p>
+            </div>
+            <div class="card">
+                <h3>Other Skills</h3>
+                <p>Photoshop, Excel</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            
+            <div class="card">
+                <h3>Predictive Analytics Model for Sales Forecasting</h3>
+                <p>Developed a machine learning model using Python to predict sales trends based on historical data. Utilized scikit-learn for model building and visualization tools like Matplotlib to present insights.</p>
+            </div>
+            <div class="card">
+                <h3>E-Commerce Website Front-End </h3>
+                <p>Built a responsive and user-friendly e-commerce website using React.js and Tailwind CSS. Incorporated dynamic features like product filtering, shopping cart functionality, and smooth animations.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Infrastructure Deployment</h3>
+                <p>Deployed and managed a scalable web application on AWS using EC2, S3, and RDS. Implemented CI/CD pipelines and load balancing to optimize performance and availability.</p>
+            </div>
+            <div class="card">
+                <h3>IoT-Based Energy Monitoring System</h3>
+                <p>Developed an IoT solution to monitor energy consumption using sensors and cloud integration. Visualized data on a custom dashboard and optimized usage patterns for better efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-card">
+            <h2>Contact Me</h2>
+            <p><strong>Email:</strong> jawashan14gt06@gmail.com</p>
+            <p><strong>Phone:</strong> +91 7904797774</p>
+            <p><strong>Address:</strong> Dharmapuri Tamil Nadu, India</p>
+    
+            <div class="social-links">
+                <h3>Connect with me</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100040951043589" target="_blank">
+                            <img src="FACE.PNG" alt="Facebook"> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/qr/YH324OIIN3R4L1" target="_blank">
+                            <img src="whatapp.png" alt="WhatsApp"> WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/hartley?igsh=Y2JidzhmaWZpbW9j" target="_blank">
+                            <img src="insta.png" alt="Instagram"> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/darshan24206" target="_blank">
+                            <img src="twitt.jpg" alt="Twitter"> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jawahar-s-88a400290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                            <img src="link.png" alt="LinkedIn"> LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2025 Chiranjeevee R. All Rights Reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
